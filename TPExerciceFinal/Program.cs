@@ -16,7 +16,7 @@ namespace TPExerciceFinal
 			List<Vehicule> vehicules = new List<Vehicule>();
 
 			//Création fichier json de sauvegarde
-			string fichierListeVehicules = "people.json";
+			string fichierListeVehicules = "ListeVehicules.json";
 
 			//Affichage du menu
 			Menu();
@@ -36,7 +36,7 @@ namespace TPExerciceFinal
 					case 7: SortVehicule(vehicules); break;
 					case 8: FilterVehicule(vehicules); break;
 					case 9: SaveVehicules(vehicules, fichierListeVehicules);break;
-					case 10: LoadVehicules(vehicules, fichierListeVehicules);break;
+					case 10: LoadVehicules(fichierListeVehicules);break;
 				}
 
 				//Affichage du menu
@@ -46,7 +46,5 @@ namespace TPExerciceFinal
 			}
 			ExitConsoleApp();
 		}
-
-
 	}
 }

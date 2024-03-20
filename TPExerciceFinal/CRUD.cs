@@ -95,10 +95,10 @@ namespace TPExerciceFinal
 					DisplayAllVehicules(vehicules.OrderBy(v => v.Modele).ToList());
 					break;
 				case "pu":
-					//DisplayAllVehicules(vehicules.OrderBy(v => v.Puissance).ToList());
+				DisplayAllVehicules(vehicules.Where(v=>v is Voiture).OrderBy(v => ((Voiture)v).Puissance).ToList());
 					break;
 				case "po":
-					//DisplayAllVehicules(vehicules.OrderBy(v => v.Poids).ToList());
+				DisplayAllVehicules(vehicules.Where(c=>c is Camion).OrderBy(v => ((Camion)v).Poids).ToList());
 					break;
 				default:
 					break;
@@ -123,7 +123,7 @@ namespace TPExerciceFinal
 			return fichierListeVehicules;
 		}
 
-		public static void LoadVehicules(List<Vehicule> vehicules, string fichierListeVehicules)
+		public static List<Vehicule> LoadVehicules(string fichierListeVehicules)
 		{
 			//désérialize dans un fichier
 			var contenuFichier = File.ReadAllText(fichierListeVehicules);
@@ -132,6 +132,7 @@ namespace TPExerciceFinal
 			{
 				Console.WriteLine(item);
 			}
+			return listeVehicules;
 		}
 	}
 }
