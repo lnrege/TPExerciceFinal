@@ -10,9 +10,9 @@ namespace TPExerciceFinal
 	class Common
 	{
 		/// <summary>
-		/// Récupère l'entré utilisateur
+		/// Récupère l'entrée utilisateur
 		/// </summary>
-		/// <returns>la valeur saisie</returns>
+		/// <returns>la valeur saisie en chaîne de caractères</returns>
 		public static string GetStringFromConsole(string Label = "Entrez la valeur")
 		{
 			WriteLine(Label);
@@ -27,6 +27,10 @@ namespace TPExerciceFinal
 			return input;
 		}
 
+		/// <summary>
+		/// Récupère l'entrée utilisateur
+		/// </summary>
+		/// <returns>la valeur saisie en entier</returns>
 		public static int GetIntFromConsole(string Label = "Entrez la valeur")
 		{
 			int inputNumber;
@@ -41,12 +45,14 @@ namespace TPExerciceFinal
 			return inputNumber;
 		}
 
+		// Méthode pour terminer le programme
 		public static void ExitConsoleApp()
 		{
 			WriteLine("----- Programe terminé, appuyez sur Entrée pour quitter -----");
 			ReadLine();
 		}
 
+		//Menu de sélection
 		public static void Menu()
 		{
 			Console.WriteLine("Quelle action ?");

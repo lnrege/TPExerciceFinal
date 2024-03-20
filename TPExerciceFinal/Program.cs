@@ -36,7 +36,7 @@ namespace TPExerciceFinal
 					case 7: SortVehicule(vehicules); break;
 					case 8: FilterVehicule(vehicules); break;
 					case 9: SaveVehicules(vehicules, fichierListeVehicules);break;
-					case 10: LoadVehicules(fichierListeVehicules);break;
+					case 10: vehicules = LoadVehicules(fichierListeVehicules);break;
 				}
 
 				//Affichage du menu

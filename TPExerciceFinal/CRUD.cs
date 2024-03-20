@@ -8,6 +8,7 @@ namespace TPExerciceFinal
 {
 	public class CRUD
 	{
+		//Méthode pour créer une liste de véhicules
 		public static void CreateVehicule(List<Vehicule> vehicules)
 		{
 			int numero = GetIntFromConsole("Numéro (Entre 4 et 6 chiffres)  ?");
@@ -30,6 +31,7 @@ namespace TPExerciceFinal
 			Console.WriteLine("Véhicule créé");
 		}
 
+		//Méthode pour afficher tous les véhicules
 		public static void DisplayAllVehicules(List<Vehicule> vehicules)
 		{
 			foreach (var v in vehicules)
@@ -42,7 +44,7 @@ namespace TPExerciceFinal
 				Console.WriteLine(v.ToString());
 		}
 
-		//ne marche pas
+		// Méthode pour mettre à jour un véhicule sélectionné
 		public static void UpdateVehicule(List<Vehicule> vehicules)
 		{
 			DisplayAllVehicules(vehicules);
@@ -64,6 +66,7 @@ namespace TPExerciceFinal
 			Console.WriteLine("Véhicule modifié");
 		}
 
+		// Méthode pour supprimer un véhicule
 		public static void DeleteVehicule(List<Vehicule> vehicules)
 		{
 			DisplayAllVehicules(vehicules);
@@ -72,6 +75,7 @@ namespace TPExerciceFinal
 			Console.WriteLine("Véhicule suprimé");
 		}
 
+		// Méthode pour afficher un véhicule à partir de son numéro
 		public static void DisplayVehicule(List<Vehicule> vehicules)
 		{
 			DisplayAllVehicules(vehicules);
@@ -79,6 +83,7 @@ namespace TPExerciceFinal
 			Console.WriteLine(vehicules.FirstOrDefault(v => v.Numero == num));
 		}
 
+		// Méthode pour trier la liste de véhicule selon le paramètre choisi
 		public static void SortVehicule(List<Vehicule> vehicules)
 		{
 			var sort = GetStringFromConsole("Quel tri ? n: numéro, m: marque, o: modèle, pu => puissance (voiture seulement), po => poids (camion seulement)");
@@ -105,6 +110,7 @@ namespace TPExerciceFinal
 			}
 		}
 
+		// Méthode pour filtrer la liste des véhicules
 		public static void FilterVehicule(List<Vehicule> vehicules)
 		{
 			var sort = GetStringFromConsole().ToLower();
@@ -115,6 +121,7 @@ namespace TPExerciceFinal
 
 		}
 
+		// Méthode pour sauvegarder la liste des véhicules dans un fichier
 		public static string SaveVehicules(List<Vehicule> vehicules, string fichierListeVehicules)
 		{
 			//serialize dans un fichier
@@ -123,6 +130,7 @@ namespace TPExerciceFinal
 			return fichierListeVehicules;
 		}
 
+		// Méthode pour charger les véhicules à partir d'un fichier
 		public static List<Vehicule> LoadVehicules(string fichierListeVehicules)
 		{
 			//désérialize dans un fichier
